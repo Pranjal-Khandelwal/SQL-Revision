@@ -1,0 +1,13 @@
+Method-1(Using Nested Queries)
+select max(Salary) as SecondHighestSalary 
+from Employee 
+where Salary < (select max(Salary) from Employee)
+
+
+Method-2(Using limit and offset)
+select IFNULL((SELECT DISTINCT Salary FROM Employee order by Salary desc limit 1,1),null) as SecondHighestSalary
+
+Method-3(Using Two Table to compare)
+select max(e2.Salary) as SecondHighestSalary
+from Employee e1, Employee e2
+where e1.Salary > e2.Salary
