@@ -1,4 +1,5 @@
-Method-1(Using 
+Method-1(Using Using Two Table to compare)
+
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   RETURN (
